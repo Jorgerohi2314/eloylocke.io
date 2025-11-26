@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guía de Instalación - Eloy Locke</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <div id="app">
+      <nav class="navbar">
+        <div class="logo">EloyLocke</div>
+        <div class="nav-links">
+          <a href="#inicio">Inicio</a>
+          <a href="#pasos">Pasos</a>
+          <a href="#descarga" class="btn-nav">Descargar</a>
+        </div>
+      </nav>
+
+      <header id="inicio" class="hero">
+        <div class="hero-content">
+          <h1>Tu Aventura <span class="text-gradient">Comienza Aquí</span></h1>
+          <p>La guía definitiva para descargar e instalar la ROM. Sigue los pasos para una experiencia perfecta.</p>
+          <a href="#pasos" class="btn-primary">Comenzar Guía</a>
+        </div>
+        <div class="hero-image">
+          <img src="./hero.png" alt="Gaming Console" />
+          <div class="glow"></div>
+        </div>
+      </header>
+
+      <main>
+        <section id="pasos" class="steps-section">
+          <h2 class="section-title">Pasos Previos</h2>
+          <div class="steps-grid">
+            <div class="step-card">
+              <div class="step-icon">⚙️</div>
+              <h3>Verificar Requisitos</h3>
+              <p>Asegúrate de que tu dispositivo cumple con los requisitos mínimos para la emulación.</p>
+              <ul class="requirements-list">
+                <li>Android 10+ o Windows 10/11</li>
+                <li>4GB RAM mínimo</li>
+                <li>Espacio libre: 2GB</li>
+              </ul>
+            </div>
+            <div class="step-card">
+              <div class="step-icon">🎮</div>
+              <h3>Instalar Emulador</h3>
+              <p>Necesitarás un emulador compatible. Recomendamos las siguientes opciones:</p>
+              <div class="links-group">
+                <span class="link-placeholder">Enlace a Emulador 1</span>
+                <span class="link-placeholder">Enlace a Emulador 2</span>
+              </div>
+            </div>
+            <div class="step-card">
+              <div class="step-icon">📁</div>
+              <h3>Archivos BIOS</h3>
+              <p>Descarga e instala los archivos de BIOS necesarios en la carpeta de sistema del emulador.</p>
+              <p class="note">Nota: Asegúrate de colocarlos en la ruta correcta.</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="descarga" class="download-section">
+          <div class="glass-panel">
+            <h2>Descargar ROM</h2>
+            <p>Una vez completados los pasos anteriores, estás listo para obtener el juego.</p>
+            <div class="download-area">
+              <div class="download-placeholder">
+                <span class="lock-icon">🔒</span>
+                <p>Enlace de descarga próximamente</p>
+              </div>
+            </div>
+            <p class="disclaimer">Asegúrate de poseer una copia legal del juego original.</p>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <p>&copy; 2025 Eloy Locke. Todos los derechos reservados.</p>
+      </footer>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
