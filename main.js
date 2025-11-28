@@ -35,3 +35,36 @@ document.querySelectorAll('.step-card, .glass-panel, .hero-content, .hero-image'
     el.classList.add('fade-in-section');
     observer.observe(el);
 });
+
+// User Selection Logic
+const userLinks = {
+    fran: "https://gofile.io/d/Xib0Ix",
+    manu: "https://www.facebook.com/photo/?fbid=2024612324264064&set=ecnf.100044254457993", // REEMPLAZAR CON ENLACE REAL
+    mario: "https://gofile.io/d/xK4mjB",
+    jorge: "https://example.com/rom-jorge"  // REEMPLAZAR CON ENLACE REAL
+};
+
+const userButtons = document.querySelectorAll('.user-btn');
+const downloadContainer = document.getElementById('download-container');
+const selectedUserName = document.getElementById('selected-user-name');
+const dynamicDownloadLink = document.getElementById('dynamic-download-link');
+
+userButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+        // Remove active class from all
+        userButtons.forEach(b => b.classList.remove('active'));
+
+        // Add active class to clicked
+        btn.classList.add('active');
+
+        const user = btn.dataset.user;
+        const link = userLinks[user];
+
+        // Update content
+        selectedUserName.textContent = user;
+        dynamicDownloadLink.href = link;
+
+        // Show download area with animation
+        downloadContainer.classList.remove('hidden');
+    });
+});

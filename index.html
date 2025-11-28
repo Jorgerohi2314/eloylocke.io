@@ -82,9 +82,21 @@
           <h2>Descargar ROM</h2>
           <p>Una vez completados los pasos anteriores, estás listo para obtener el juego.</p>
           <div class="download-area">
-            <div class="download-placeholder">
-              <span class="lock-icon">🔒</span>
-              <p>Enlace de descarga próximamente</p>
+            <div class="user-selection">
+              <h3>Selecciona tu perfil</h3>
+              <div class="user-buttons">
+                <button class="user-btn" data-user="fran">Fran</button>
+                <button class="user-btn" data-user="manu">Manu</button>
+                <button class="user-btn" data-user="mario">Mario</button>
+                <button class="user-btn" data-user="jorge">Jorge</button>
+              </div>
+            </div>
+
+            <div id="download-container" class="download-result hidden">
+              <p>Enlace generado para <span id="selected-user-name" class="highlight-name"></span>:</p>
+              <a href="#" id="dynamic-download-link" class="btn-primary btn-download" target="_blank">
+                <span class="icon">⬇️</span> Descargar ROM
+              </a>
             </div>
           </div>
           <p class="disclaimer">Asegúrate de poseer una copia legal del juego original.</p>
