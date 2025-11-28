@@ -44,13 +44,19 @@ const userLinks = {
     jorge: "https://example.com/rom-jorge"  // REEMPLAZAR CON ENLACE REAL
 };
 
+console.log('Iniciando lógica de selección de usuario...');
 const userButtons = document.querySelectorAll('.user-btn');
 const downloadContainer = document.getElementById('download-container');
 const selectedUserName = document.getElementById('selected-user-name');
 const dynamicDownloadLink = document.getElementById('dynamic-download-link');
 
+if (userButtons.length === 0) console.error('No se encontraron botones de usuario (.user-btn)');
+if (!downloadContainer) console.error('No se encontró el contenedor de descarga (#download-container)');
+
 userButtons.forEach(btn => {
     btn.addEventListener('click', () => {
+        console.log('Click en usuario:', btn.dataset.user);
+
         // Remove active class from all
         userButtons.forEach(b => b.classList.remove('active'));
 
@@ -60,11 +66,21 @@ userButtons.forEach(btn => {
         const user = btn.dataset.user;
         const link = userLinks[user];
 
+        if (!link) {
+            console.error('No se encontró enlace para el usuario:', user);
+            return;
+        }
+
+        console.log('Enlace seleccionado:', link);
+
         // Update content
-        selectedUserName.textContent = user;
-        dynamicDownloadLink.href = link;
+        if (selectedUserName) selectedUserName.textContent = user;
+        if (dynamicDownloadLink) dynamicDownloadLink.href = link;
 
         // Show download area with animation
-        downloadContainer.classList.remove('hidden');
+        if (downloadContainer) {
+            downloadContainer.classList.remove('hidden');
+            console.log('Clase hidden eliminada del contenedor');
+        }
     });
 });
