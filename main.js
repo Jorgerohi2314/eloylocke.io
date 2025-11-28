@@ -3,15 +3,15 @@ import './style.css'
 // Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
         const targetId = this.getAttribute('href');
-        if (targetId === '#') return;
-
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-            targetElement.scrollIntoView({
-                behavior: 'smooth'
-            });
+        if (targetId && targetId.startsWith('#') && targetId !== '#') {
+            e.preventDefault();
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
         }
     });
 });
@@ -44,19 +44,13 @@ const userLinks = {
     jorge: "https://example.com/rom-jorge"  // REEMPLAZAR CON ENLACE REAL
 };
 
-console.log('Iniciando lógica de selección de usuario...');
 const userButtons = document.querySelectorAll('.user-btn');
 const downloadContainer = document.getElementById('download-container');
 const selectedUserName = document.getElementById('selected-user-name');
 const dynamicDownloadLink = document.getElementById('dynamic-download-link');
 
-if (userButtons.length === 0) console.error('No se encontraron botones de usuario (.user-btn)');
-if (!downloadContainer) console.error('No se encontró el contenedor de descarga (#download-container)');
-
 userButtons.forEach(btn => {
     btn.addEventListener('click', () => {
-        console.log('Click en usuario:', btn.dataset.user);
-
         // Remove active class from all
         userButtons.forEach(b => b.classList.remove('active'));
 
@@ -66,21 +60,17 @@ userButtons.forEach(btn => {
         const user = btn.dataset.user;
         const link = userLinks[user];
 
-        if (!link) {
-            console.error('No se encontró enlace para el usuario:', user);
-            return;
-        }
-
-        console.log('Enlace seleccionado:', link);
-
         // Update content
-        if (selectedUserName) selectedUserName.textContent = user;
-        if (dynamicDownloadLink) dynamicDownloadLink.href = link;
+        if (selectedUserName) {
+            selectedUserName.textContent = user;
+        }
+        if (dynamicDownloadLink) {
+            dynamicDownloadLink.href = link;
+        }
 
         // Show download area with animation
         if (downloadContainer) {
             downloadContainer.classList.remove('hidden');
-            console.log('Clase hidden eliminada del contenedor');
         }
     });
 });
