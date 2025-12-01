@@ -39,9 +39,9 @@ document.querySelectorAll('.step-card, .glass-panel, .hero-content, .hero-image'
 // User Selection Logic
 const userLinks = {
     fran: "https://gofile.io/d/Xib0Ix",
-    manu: "https://www.facebook.com/photo/?fbid=2024612324264064&set=ecnf.100044254457993", // REEMPLAZAR CON ENLACE REAL
+    manu: "https://gofile.io/d/CVhuwy",
     mario: "https://gofile.io/d/xK4mjB",
-    jorge: "https://example.com/rom-jorge"  // REEMPLAZAR CON ENLACE REAL
+    jorge: "https://gofile.io/d/SkIpoa"
 };
 
 const userButtons = document.querySelectorAll('.user-btn');
