@@ -195,7 +195,7 @@ body {
 
 .card-icon {
     font-size: 2.5rem;
-    filter: drop-shadow(0 0 10px rgba(255,255,255,0.1));
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.1));
 }
 
 .card-text h3 {
@@ -217,7 +217,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at top right, rgba(255,255,255,0.1), transparent 60%);
+    background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.1), transparent 60%);
     opacity: 0;
     transition: opacity 0.3s;
     z-index: 1;
@@ -706,8 +706,15 @@ footer {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Loading and Error States */
@@ -808,7 +815,7 @@ footer {
     width: 80px;
     height: 80px;
     object-fit: contain;
-    filter: drop-shadow(0 0 10px rgba(255,255,255,0.1));
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.1));
 }
 
 .pokemon-details {
@@ -839,24 +846,95 @@ footer {
 }
 
 /* Type Colors */
-.type-badge.normal { background: #A8A878; color: white; }
-.type-badge.fire { background: #F08030; color: white; }
-.type-badge.water { background: #6890F0; color: white; }
-.type-badge.electric { background: #F8D030; color: #313131; }
-.type-badge.grass { background: #78C850; color: white; }
-.type-badge.ice { background: #98D8D8; color: #313131; }
-.type-badge.fighting { background: #C03028; color: white; }
-.type-badge.poison { background: #A040A0; color: white; }
-.type-badge.ground { background: #E0C068; color: #313131; }
-.type-badge.flying { background: #A890F0; color: white; }
-.type-badge.psychic { background: #F85888; color: white; }
-.type-badge.bug { background: #A8B820; color: white; }
-.type-badge.rock { background: #B8A038; color: white; }
-.type-badge.ghost { background: #705898; color: white; }
-.type-badge.dragon { background: #7038F8; color: white; }
-.type-badge.dark { background: #705848; color: white; }
-.type-badge.steel { background: #B8B8D0; color: #313131; }
-.type-badge.fairy { background: #EE99AC; color: #313131; }
+.type-badge.normal {
+    background: #A8A878;
+    color: white;
+}
+
+.type-badge.fire {
+    background: #F08030;
+    color: white;
+}
+
+.type-badge.water {
+    background: #6890F0;
+    color: white;
+}
+
+.type-badge.electric {
+    background: #F8D030;
+    color: #313131;
+}
+
+.type-badge.grass {
+    background: #78C850;
+    color: white;
+}
+
+.type-badge.ice {
+    background: #98D8D8;
+    color: #313131;
+}
+
+.type-badge.fighting {
+    background: #C03028;
+    color: white;
+}
+
+.type-badge.poison {
+    background: #A040A0;
+    color: white;
+}
+
+.type-badge.ground {
+    background: #E0C068;
+    color: #313131;
+}
+
+.type-badge.flying {
+    background: #A890F0;
+    color: white;
+}
+
+.type-badge.psychic {
+    background: #F85888;
+    color: white;
+}
+
+.type-badge.bug {
+    background: #A8B820;
+    color: white;
+}
+
+.type-badge.rock {
+    background: #B8A038;
+    color: white;
+}
+
+.type-badge.ghost {
+    background: #705898;
+    color: white;
+}
+
+.type-badge.dragon {
+    background: #7038F8;
+    color: white;
+}
+
+.type-badge.dark {
+    background: #705848;
+    color: white;
+}
+
+.type-badge.steel {
+    background: #B8B8D0;
+    color: #313131;
+}
+
+.type-badge.fairy {
+    background: #EE99AC;
+    color: #313131;
+}
 
 .evolution-type {
     text-align: center;
@@ -1310,11 +1388,11 @@ footer {
     .gallery-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .gallery-item .large {
         grid-column: span 1;
     }
-    
+
     .additional-hero-images {
         position: static;
         transform: none;
