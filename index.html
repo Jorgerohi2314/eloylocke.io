@@ -22,6 +22,7 @@
           style="text-decoration: none; color: inherit; display: block; text-align: center;">Tracker</a>
         <a href="#inicio">Inicio</a>
         <a href="#pasos">Pasos</a>
+        <a href="#game-info">Info del Juego</a>
         <a href="#descarga" class="btn-nav">Descargar</a>
       </div>
     </nav>
@@ -206,6 +207,41 @@
           <div class="image-placeholder">[Imagen - Ejemplo de selección de ROM]</div>
           <p class="disclaimer">Cada ROM es única y contiene ajustes personalizados para tu experiencia de juego.
           </p>
+        </div>
+      </section>
+
+      <section id="game-info" class="game-info-section">
+        <div class="glass-panel game-info-panel">
+          <div class="game-info-icon">🎮</div>
+          <h2>Información del Juego</h2>
+          <p>Consulta los cambios en evoluciones, movimientos y tiendas:</p>
+          
+          <div class="info-tabs">
+            <button class="tab-btn active" data-tab="evolutions">Evoluciones</button>
+            <button class="tab-btn" data-tab="shops">Tiendas</button>
+          </div>
+          
+          <div class="tab-content">
+            <div id="evolutions-tab" class="tab-pane active">
+              <div class="loading-spinner">Cargando información de evoluciones...</div>
+            </div>
+            <div id="shops-tab" class="tab-pane">
+              <div class="loading-spinner">Cargando información de tiendas...</div>
+            </div>
+          </div>
+          
+          <div class="game-info-controls">
+            <select id="user-select" class="user-select-dropdown">
+              <option value="montes">Montes</option>
+              <option value="jorge">Jorge</option>
+              <option value="manu">Manu</option>
+              <option value="mario">Mario</option>
+              <option value="fran">Fran</option>
+            </select>
+            <button id="refresh-data" class="btn-secondary btn-small">
+              <span class="icon">🔄</span> Actualizar Datos
+            </button>
+          </div>
         </div>
       </section>
 
