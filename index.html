@@ -371,48 +371,54 @@
     // DATOS DEL JUEGO (Hardcoded de tu información)
     // ====================
 
-    const shopsData = [
-      {
-        name: "Slateport Incenses",
-        items: ["revival-herb", "red-scarf", "kings-rock", "water-stone", "ganlon-berry", "sun-stone", "leaf-stone", "moon-stone", "deep-sea-scale"]
-      },
-      {
-        name: "Slateport Vitamins",
-        items: ["dawn-stone", "soda-pop", "max-potion", "chilan-berry", "dragon-scale", "metal-coat"]
-      },
-      {
-        name: "Rustboro Secondary",
-        items: ["max-elixir", "kelpsy-berry", "great-ball"]
-      },
-      {
-        name: "Slateport Secondary",
-        items: ["power-lens", "protector", "earth-plate", "shiny-stone", "pretty-wing", "prism-scale", "dubious-disc", "electirizer"]
-      },
-      {
-        name: "Verdanturf Secondary",
-        items: ["magmarizer", "sachet", "shalour-sable"]
-      },
-      {
-        name: "Fallarbor Secondary",
-        items: ["deep-sea-tooth", "oval-stone", "nomel-berry"]
-      },
-      {
-        name: "Lavaridge Herbs",
-        items: ["honey", "fire-stone", "claw-fossil", "razor-fang"]
-      },
-      {
-        name: "Lilycove Dept. Store 2F",
-        items: ["steel-gem", "razz-berry", "pink-scarf"]
-      },
-      {
-        name: "Lilycove Dept. Store 3F Left",
-        items: ["spelon-berry", "nugget", "reaper-cloth", "dusk-stone", "heat-rock", "premier-ball"]
-      },
-      {
-        name: "Lilycove Dept. Store 3F Right",
-        items: ["like-mail", "razor-claw", "smoke-ball", "thunder-stone", "green-scarf", "whipped-dream", "up-grade", "water-gem"]
-      }
-    ];
+    const shopsData = {
+      montes: [
+        {
+          name: "Slateport Incenses",
+          items: ["revival-herb", "red-scarf", "kings-rock", "water-stone", "ganlon-berry", "sun-stone", "leaf-stone", "moon-stone", "deep-sea-scale"]
+        },
+        {
+          name: "Slateport Vitamins",
+          items: ["dawn-stone", "soda-pop", "max-potion", "chilan-berry", "dragon-scale", "metal-coat"]
+        },
+        {
+          name: "Rustboro Secondary",
+          items: ["max-elixir", "kelpsy-berry", "great-ball"]
+        },
+        {
+          name: "Slateport Secondary",
+          items: ["power-lens", "protector", "earth-plate", "shiny-stone", "pretty-wing", "prism-scale", "dubious-disc", "electirizer"]
+        },
+        {
+          name: "Verdanturf Secondary",
+          items: ["magmarizer", "sachet", "shalour-sable"]
+        },
+        {
+          name: "Fallarbor Secondary",
+          items: ["deep-sea-tooth", "oval-stone", "nomel-berry"]
+        },
+        {
+          name: "Lavaridge Herbs",
+          items: ["honey", "fire-stone", "claw-fossil", "razor-fang"]
+        },
+        {
+          name: "Lilycove Dept. Store 2F",
+          items: ["steel-gem", "razz-berry", "pink-scarf"]
+        },
+        {
+          name: "Lilycove Dept. Store 3F Left",
+          items: ["spelon-berry", "nugget", "reaper-cloth", "dusk-stone", "heat-rock", "premier-ball"]
+        },
+        {
+          name: "Lilycove Dept. Store 3F Right",
+          items: ["like-mail", "razor-claw", "smoke-ball", "thunder-stone", "green-scarf", "whipped-dream", "up-grade", "water-gem"]
+        }
+      ],
+      jorge: [],
+      manu: [],
+      mario: [],
+      fran: []
+    };
 
     const movesData = [
       { name: "Tackle", es: "Placaje", power: 40, pp: null, acc: null, change: "Potencia aumentada a 40", type: "normal" },
@@ -533,11 +539,46 @@
     // RENDERIZADO
     // ====================
 
-    function renderShops() {
+    function renderShops(user = 'montes') {
       const container = document.getElementById('shops-grid');
       container.innerHTML = '';
 
-      shopsData.forEach(shop => {
+      // Update shop controls if they exist, or create them
+      let controls = document.getElementById('shop-controls');
+      if (!controls) {
+        const controlsDiv = document.createElement('div');
+        controlsDiv.id = 'shop-controls';
+        controlsDiv.className = 'col-span-1 md:col-span-2 lg:col-span-3 flex flex-wrap justify-center gap-2 mb-6';
+
+        ['montes', 'jorge', 'manu', 'mario', 'fran'].forEach(u => {
+          const btn = document.createElement('button');
+          btn.textContent = u.charAt(0).toUpperCase() + u.slice(1);
+          btn.className = `px-3 py-1 rounded text-sm transition ${u === user ? 'bg-blue-600 text-white' : 'bg-slate-700 text-slate-300 hover:bg-slate-600'}`;
+          btn.onclick = () => renderShops(u);
+          controlsDiv.appendChild(btn);
+        });
+
+        container.parentElement.insertBefore(controlsDiv, container);
+      } else {
+        // Update active state
+        Array.from(controls.children).forEach(btn => {
+          const btnUser = btn.textContent.toLowerCase();
+          btn.className = `px-3 py-1 rounded text-sm transition ${btnUser === user ? 'bg-blue-600 text-white' : 'bg-slate-700 text-slate-300 hover:bg-slate-600'}`;
+        });
+      }
+
+      const userShops = shopsData[user];
+
+      if (!userShops || userShops.length === 0) {
+        container.innerHTML = `
+          <div class="col-span-1 md:col-span-2 lg:col-span-3 text-center py-12 text-slate-500">
+            <p>No hay datos de tienda para ${user.charAt(0).toUpperCase() + user.slice(1)}</p>
+          </div>
+        `;
+        return;
+      }
+
+      userShops.forEach(shop => {
         const shopEl = document.createElement('div');
         shopEl.className = 'shop-card rounded-xl p-4';
 
