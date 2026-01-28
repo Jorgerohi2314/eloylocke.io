@@ -438,7 +438,7 @@
     ];
 
     const tradelessEvolutions = [
-      { from: "poliwhirl", to: "politoed", method: "Nivel + King's Rock" },
+      { from: "poliwhirl", to: "politoed", method: "Nivel + Roca del rey" },
       { from: "kadabra", to: "alakazam", method: "Nivel 37" },
       { from: "machoke", to: "machamp", method: "Nivel 37" },
       { from: "graveler", to: "golem", method: "Nivel 37" },
@@ -697,9 +697,9 @@
       document.getElementById(`content-${tab}`).classList.add('active');
 
       // Render content if needed
-      if (tab === 'shops' && document.getElementById('shops-grid').innerHTML === '') {
+      if (tab === 'shops' && document.getElementById('shops-grid').children.length === 0) {
         renderShops();
-      } else if (tab === 'moves' && document.getElementById('moves-list').innerHTML === '') {
+      } else if (tab === 'moves' && document.getElementById('moves-list').children.length === 0) {
         renderMoves();
       } else if (tab === 'evolutions') {
         renderTradelessEvolutions();
