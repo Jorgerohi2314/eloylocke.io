@@ -1,6 +1,7 @@
 # Logs
-logs
+# logs - commented out to allow tracking specific game logs
 *.log
+# !logs/*.cxi.log - allow specific log files if needed
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
