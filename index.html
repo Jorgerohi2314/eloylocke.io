@@ -8,260 +8,734 @@
   <title>Pokémon EloyLocke 3 - Rubí Omega</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./style.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Rajdhani:wght@500;700&display=swap"
+    rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Manteniendo tus estilos originales + nuevos */
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+    }
+
+    .glass-panel {
+      background: rgba(30, 41, 59, 0.7);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 1rem;
+    }
+
+    .pokemon-sprite {
+      image-rendering: pixelated;
+      transition: transform 0.2s;
+    }
+
+    .pokemon-sprite:hover {
+      transform: scale(1.2);
+    }
+
+    .item-badge {
+      background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    }
+
+    .move-card {
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(147, 51, 234, 0.1) 100%);
+      border-left: 4px solid #3b82f6;
+    }
+
+    .shop-card {
+      background: linear-gradient(145deg, #1e293b 0%, #0f172a 100%);
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      transition: all 0.3s;
+    }
+
+    .shop-card:hover {
+      border-color: #3b82f6;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 40px -10px rgba(59, 130, 246, 0.3);
+    }
+
+    .tab-btn {
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      background: rgba(30, 41, 59, 0.7);
+      color: #94a3b8;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .tab-btn.active {
+      background: #3b82f6;
+      color: white;
+      border-color: #3b82f6;
+    }
+
+    .tab-pane {
+      display: none;
+    }
+
+    .tab-pane.active {
+      display: block;
+    }
+
+    .user-btn {
+      background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.2s;
+      margin: 5px;
+    }
+
+    .user-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .text-gradient {
+      background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
 </head>
 
-<body>
-  <div id="app">
-    <nav class="navbar">
-      <div class="logo">Pokémon EloyLocke 3</div>
-      <div class="nav-links">
-        <a href="[ENLACE_EXCEL_TRACKER]"
-          target="_blank" class="link-placeholder"
-          style="text-decoration: none; color: inherit; display: block; text-align: center;">Tracker</a>
-        <a href="#inicio">Inicio</a>
-        <a href="#pasos">Pasos</a>
-        <a href="#game-info">Info del Juego</a>
-        <a href="#descarga" class="btn-nav">Descargar</a>
+<body class="bg-slate-900 text-slate-200">
+
+  <!-- Navbar Original -->
+  <nav class="fixed w-full z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="text-2xl font-bold font-display text-white">Pokémon EloyLocke 3</div>
+      <div class="flex gap-6 items-center">
+        <a href="[ENLACE_EXCEL_TRACKER]" target="_blank" class="hover:text-blue-400 transition">Tracker</a>
+        <a href="#inicio" class="hover:text-blue-400 transition">Inicio</a>
+        <a href="#info-juego" class="hover:text-blue-400 transition">Info del Juego</a>
+        <a href="#usuarios" class="hover:text-blue-400 transition">Progreso</a>
+        <a href="#descarga" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-full transition">Descargar</a>
       </div>
-    </nav>
+    </div>
+  </nav>
 
-    <header id="inicio" class="hero">
-      <div class="hero-content">
-        <h1>Pokémon EloyLocke 3 <span class="text-gradient">Rubí Omega</span></h1>
-        
-        <div class="priority-access">
-          <a href="[ENLACE_EXCEL_TRACKER]" target="_blank" class="access-card drive-card">
-            <div class="card-content">
-              <span class="card-icon">📊</span>
-              <div class="card-text">
-                <h3>Tracker del Progreso</h3>
-                <p>Ver Avances</p>
-              </div>
-            </div>
-            <div class="card-glow"></div>
+  <!-- Hero Section -->
+  <header id="inicio" class="pt-32 pb-16 container mx-auto px-6">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <h1 class="text-5xl md:text-7xl font-bold mb-6">
+          Pokémon EloyLocke 3 <span class="text-gradient">Rubí Omega</span>
+        </h1>
+        <p class="text-xl text-slate-400 mb-8">
+          Experiencia Nuzlocke modificada con evoluciones sin intercambio, tiendas mejoradas y balance de movimientos.
+        </p>
+        <div class="flex gap-4">
+          <a href="#info-juego" class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-full font-semibold transition">
+            Ver Cambios del Juego
           </a>
-
-          <a href="https://luminescent.team/pokedex" target="_blank" class="access-card pokedex-card">
-            <div class="card-content">
-              <span class="card-icon">📖</span>
-              <div class="card-text">
-                <h3>Pokédex</h3>
-                <p>Wiki & Stats</p>
-              </div>
-            </div>
-            <div class="card-glow"></div>
+          <a href="#descarga" class="border border-slate-600 hover:border-blue-400 px-6 py-3 rounded-full transition">
+            Descargar ROM
           </a>
         </div>
-
-        <p class="hero-subtitle">¿Necesitas instalar el juego?</p>
-        <a href="#pasos" class="btn-secondary">Ver Guía de Instalación</a>
       </div>
-      <div class="hero-image">
-        <img src="folagor.jpg" alt="Pokemon Rubi Omega" />
-        <div class="glow"></div>
-        <div class="additional-hero-images">
-          <!-- Espacio para imágenes temáticas adicionales -->
-          <div class="image-placeholder">[Imagen Temática 1]</div>
-          <div class="image-placeholder">[Imagen Temática 2]</div>
+      <div class="relative">
+        <img src="folagor.jpg" alt="Pokemon Rubi Omega" class="rounded-2xl shadow-2xl border border-slate-700" />
+        <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-blue-500 rounded-full blur-3xl opacity-50"></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Info del Juego - Datos Insertados Directamente -->
+  <section id="info-juego" class="py-16 bg-slate-800/50">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold font-display mb-4">Información del Juego</h2>
+        <p class="text-slate-400">Cambios aplicados en esta versión modificada</p>
+      </div>
+
+      <!-- Tabs -->
+      <div class="flex justify-center gap-4 mb-8">
+        <button onclick="switchTab('shops')" id="tab-shops" class="tab-btn active">🏪 Tiendas</button>
+        <button onclick="switchTab('moves')" id="tab-moves" class="tab-btn">⚔️ Movimientos</button>
+        <button onclick="switchTab('evolutions')" id="tab-evolutions" class="tab-btn">🧬 Evoluciones</button>
+      </div>
+
+      <!-- Content Container -->
+      <div class="glass-panel p-6 min-h-[600px]">
+
+        <!-- Tiendas Tab -->
+        <div id="content-shops" class="tab-pane active">
+          <h3 class="text-2xl font-bold mb-6 text-blue-400">Objetos Disponibles en Tiendas</h3>
+          <div id="shops-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Renderizado por JS -->
+          </div>
+        </div>
+
+        <!-- Movimientos Tab -->
+        <div id="content-moves" class="tab-pane">
+          <h3 class="text-2xl font-bold mb-6 text-purple-400">Actualizaciones de Movimientos</h3>
+          <div id="moves-list" class="grid gap-3">
+            <!-- Renderizado por JS -->
+          </div>
+        </div>
+
+        <!-- Evoluciones Tab -->
+        <div id="content-evolutions" class="tab-pane">
+          <div class="mb-6 flex justify-between items-center">
+            <h3 class="text-2xl font-bold text-pink-400">Sistema de Evolución</h3>
+            <div class="flex gap-2">
+              <button onclick="renderTradelessEvolutions()"
+                class="text-sm px-4 py-2 bg-pink-600 rounded hover:bg-pink-700 transition">Sin Intercambio</button>
+              <button onclick="renderEasierEvolutions()"
+                class="text-sm px-4 py-2 bg-slate-700 rounded hover:bg-slate-600 transition">Niveles Reducidos</button>
+            </div>
+          </div>
+          <div id="evolutions-content">
+            <!-- Renderizado por JS -->
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Espacio para Información de Otros Usuarios -->
+  <section id="usuarios" class="py-16 container mx-auto px-6">
+    <h2 class="text-3xl font-bold font-display mb-8 text-center">Progreso de los Jugadores</h2>
+
+    <!-- Grid de Usuarios - Placeholder para integración futura -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- Usuario: Montes -->
+      <div class="glass-panel p-6 border-l-4 border-yellow-500">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-xl font-bold text-yellow-400">Montes</h3>
+          <span class="text-xs bg-yellow-500/20 text-yellow-300 px-2 py-1 rounded">Líder actual</span>
+        </div>
+        <div id="user-data-montes" class="space-y-3">
+          <p class="text-slate-400 text-sm italic">Cargando datos del tracker...</p>
+          <!-- Aquí se insertará dinámicamente la info de progreso -->
+        </div>
+        <div class="mt-4 pt-4 border-t border-slate-700">
+          <div class="flex justify-between text-sm">
+            <span class="text-slate-500">Medallas:</span>
+            <span class="text-white font-mono">0/8</span>
+          </div>
+          <div class="flex justify-between text-sm mt-2">
+            <span class="text-slate-500">Pokémon vivos:</span>
+            <span class="text-white font-mono">-</span>
+          </div>
         </div>
       </div>
-    </header>
 
-    <main>
-      <!-- Sección de imágenes temáticas -->
-      <section id="galeria" class="gallery-section">
-        <h2 class="section-title">Galería Pokémon</h2>
-        <div class="gallery-grid">
-          <div class="gallery-item">
-            <div class="image-placeholder large">[Imagen Principal - Portada del Juego]</div>
-            <p class="image-caption">Pokémon Rubí Omega Randomlocke</p>
+      <!-- Usuario: Jorge -->
+      <div class="glass-panel p-6 border-l-4 border-blue-500">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-xl font-bold text-blue-400">Jorge</h3>
+          <span class="text-xs bg-blue-500/20 text-blue-300 px-2 py-1 rounded">En juego</span>
+        </div>
+        <div id="user-data-jorge" class="space-y-3">
+          <p class="text-slate-400 text-sm italic">Cargando datos del tracker...</p>
+        </div>
+        <div class="mt-4 pt-4 border-t border-slate-700">
+          <div class="flex justify-between text-sm">
+            <span class="text-slate-500">Medallas:</span>
+            <span class="text-white font-mono">0/8</span>
           </div>
-          <div class="gallery-item">
-            <div class="image-placeholder">[Imagen 1 - Pokemon Legendario]</div>
-            <p class="image-caption">Pokédex Regional</p>
-          </div>
-          <div class="gallery-item">
-            <div class="image-placeholder">[Imagen 2 - Equipo Principal]</div>
-            <p class="image-caption">Entrenadores</p>
-          </div>
-          <div class="gallery-item">
-            <div class="image-placeholder">[Imagen 3 - Mapa de Hoenn]</div>
-            <p class="image-caption">Región de Hoenn</p>
+          <div class="flex justify-between text-sm mt-2">
+            <span class="text-slate-500">Pokémon vivos:</span>
+            <span class="text-white font-mono">-</span>
           </div>
         </div>
-      </section>
+      </div>
 
-      <section id="pasos" class="steps-section">
-        <h2 class="section-title">Guía de Instalación</h2>
-        <div class="steps-grid">
-          <div class="step-card">
-            <div class="step-icon">🎮</div>
-            <h3>1. Descargar Emulador Citra Azahar</h3>
-            <p>Descarga el emulador de 3DS más actualizado y compatible.</p>
-            <div class="links-group">
-              <a href="[ENLACE_DE_DESCARGA_CITRA_AZAHAR]" target="_blank" class="btn-primary btn-download">
-                <span class="icon">⬇️</span> Descargar Citra Azahar
-              </a>
-              <p class="note">Versión recomendada: Última estable disponible</p>
-            </div>
+      <!-- Usuario: Manu -->
+      <div class="glass-panel p-6 border-l-4 border-red-500">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-xl font-bold text-red-400">Manu</h3>
+          <span class="text-xs bg-red-500/20 text-red-300 px-2 py-1 rounded">En juego</span>
+        </div>
+        <div id="user-data-manu" class="space-y-3">
+          <p class="text-slate-400 text-sm italic">Cargando datos del tracker...</p>
+        </div>
+        <div class="mt-4 pt-4 border-t border-slate-700">
+          <div class="flex justify-between text-sm">
+            <span class="text-slate-500">Medallas:</span>
+            <span class="text-white font-mono">0/8</span>
           </div>
-          
-          <div class="step-card">
-            <div class="step-icon">📁</div>
-            <h3>2. Instalar Emulador</h3>
-            <p>Ejecuta el instalador y sigue los pasos de configuración inicial.</p>
-            <ul class="requirements-list">
-              <li>Descomprime el archivo descargado</li>
-              <li>Ejecuta CitraSetup.exe</li>
-              <li>Sigue el asistente de instalación</li>
-              <li>Configura los controles básicos</li>
-            </ul>
-            <div class="image-placeholder">[Imagen - Guía de instalación del emulador]</div>
-          </div>
-          
-          <div class="step-card">
-            <div class="step-icon">⚙️</div>
-            <h3>3. Configurar Emulador</h3>
-            <p>Ajusta la configuración para optimal rendimiento y compatibilidad.</p>
-            <ul class="requirements-list">
-              <li>Gráficos: OpenGL o Vulkan</li>
-              <li>Resolución: 4x native (2400x1440)</li>
-              <li>Sonido: LLE Applet si hay problemas</li>
-              <li>Region: Europeo/Español</li>
-            </ul>
-            <div class="image-placeholder">[Imagen - Configuración avanzada de Citra]</div>
-          </div>
-          
-          <div class="step-card">
-            <div class="step-icon">🎯</div>
-            <h3>4. Descargar tu ROM Personal</h3>
-            <p>Selecciona tu nombre para descargar tu versión única del juego.</p>
-            <div class="user-selection compact">
-              <div class="user-buttons">
-                <button class="user-btn" data-user="jorge">Jorge</button>
-                <button class="user-btn" data-user="manu">Manu</button>
-                <button class="user-btn" data-user="montes">Montes</button>
-                <button class="user-btn" data-user="mario">Mario</button>
-                <button class="user-btn" data-user="fran">Fran</button>
-              </div>
-            </div>
-            <div id="rom-download-container" class="download-result hidden">
-              <p>Tu ROM personalizada está lista:</p>
-              <a href="#" id="rom-download-link" class="btn-primary btn-download" target="_blank">
-                <span class="icon">⬇️</span> Descargar mi ROM
-              </a>
-            </div>
-          </div>
-          
-          <div class="step-card">
-            <div class="step-icon">🚀</div>
-            <h3>5. Cargar el Juego</h3>
-            <p>Importa la ROM a Citra y comienza tu aventura Pokémon.</p>
-            <ul class="requirements-list">
-              <li>Abre Citra Azahar</li>
-              <li>Archivo → Cargar archivo</li>
-              <li>Selecciona tu ROM (.3ds o .cia)</li>
-              <li>¡Listo para jugar!</li>
-            </ul>
-            <div class="image-placeholder">[Imagen - Cargar ROM en Citra]</div>
-          </div>
-          
-          <div class="step-card">
-            <div class="step-icon">📊</div>
-            <h3>6. Tracker del Progreso</h3>
-            <p>Consulta el estado y progreso de todos los participantes.</p>
-            <a href="[ENLACE_EXCEL_TRACKER]" target="_blank" class="btn-primary btn-tracker">
-              <span class="icon">📊</span> Abrir Tracker de Progreso
-            </a>
-            <p class="note">Actualiza tu progreso aquí para que todos vean tu avance</p>
+          <div class="flex justify-between text-sm mt-2">
+            <span class="text-slate-500">Pokémon vivos:</span>
+            <span class="text-white font-mono">-</span>
           </div>
         </div>
-      </section>
+      </div>
 
-      <section id="descarga" class="download-section">
-        <div class="glass-panel">
-          <h2>Descargar tu ROM Personalizada</h2>
-          <p>Selecciona tu nombre para descargar tu versión única de Pokémon EloyLocke 3 - Rubí Omega.</p>
-          <div class="download-area">
-            <div class="user-selection">
-              <h3>Selecciona tu perfil</h3>
-              <div class="user-buttons">
-                <button class="user-btn" data-user="jorge">Jorge</button>
-                <button class="user-btn" data-user="manu">Manu</button>
-                <button class="user-btn" data-user="montes">Montes</button>
-                <button class="user-btn" data-user="mario">Mario</button>
-                <button class="user-btn" data-user="fran">Fran</button>
-              </div>
-            </div>
-
-            <div id="download-container" class="download-result hidden">
-              <p>ROM generada para <span id="selected-user-name" class="highlight-name"></span>:</p>
-              <a href="#" id="dynamic-download-link" class="btn-primary btn-download" target="_blank">
-                <span class="icon">⬇️</span> Descargar mi ROM Personalizada
-              </a>
-              <p class="rom-info">Archivo: Pokemon_EloyLocke3_<span class="user-name-placeholder"></span>_RubiOmega.3ds</p>
-            </div>
+      <!-- Usuario: Mario -->
+      <div class="glass-panel p-6 border-l-4 border-green-500">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-xl font-bold text-green-400">Mario</h3>
+          <span class="text-xs bg-green-500/20 text-green-300 px-2 py-1 rounded">En juego</span>
+        </div>
+        <div id="user-data-mario" class="space-y-3">
+          <p class="text-slate-400 text-sm italic">Cargando datos del tracker...</p>
+        </div>
+        <div class="mt-4 pt-4 border-t border-slate-700">
+          <div class="flex justify-between text-sm">
+            <span class="text-slate-500">Medallas:</span>
+            <span class="text-white font-mono">0/8</span>
           </div>
-          <div class="image-placeholder">[Imagen - Ejemplo de selección de ROM]</div>
-          <p class="disclaimer">Cada ROM es única y contiene ajustes personalizados para tu experiencia de juego.
+          <div class="flex justify-between text-sm mt-2">
+            <span class="text-slate-500">Pokémon vivos:</span>
+            <span class="text-white font-mono">-</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Usuario: Fran -->
+      <div class="glass-panel p-6 border-l-4 border-purple-500">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-xl font-bold text-purple-400">Fran</h3>
+          <span class="text-xs bg-purple-500/20 text-purple-300 px-2 py-1 rounded">En juego</span>
+        </div>
+        <div id="user-data-fran" class="space-y-3">
+          <p class="text-slate-400 text-sm italic">Cargando datos del tracker...</p>
+        </div>
+        <div class="mt-4 pt-4 border-t border-slate-700">
+          <div class="flex justify-between text-sm">
+            <span class="text-slate-500">Medallas:</span>
+            <span class="text-white font-mono">0/8</span>
+          </div>
+          <div class="flex justify-between text-sm mt-2">
+            <span class="text-slate-500">Pokémon vivos:</span>
+            <span class="text-white font-mono">-</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="mt-8 text-center">
+      <a href="[ENLACE_EXCEL_TRACKER]" target="_blank"
+        class="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 transition">
+        <span>Ver tracker completo</span>
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- Sección de Descargas -->
+  <section id="descarga" class="py-16 bg-slate-800/30">
+    <div class="container mx-auto px-6 max-w-4xl">
+      <div class="glass-panel p-8 text-center">
+        <h2 class="text-3xl font-bold mb-4">Descargar tu ROM Personalizada</h2>
+        <p class="text-slate-400 mb-8">Selecciona tu nombre para descargar tu versión única del juego.</p>
+
+        <div class="flex flex-wrap justify-center gap-4 mb-8">
+          <button onclick="selectUser('jorge')" class="user-btn" id="btn-jorge">Jorge</button>
+          <button onclick="selectUser('manu')" class="user-btn" id="btn-manu">Manu</button>
+          <button onclick="selectUser('montes')" class="user-btn" id="btn-montes">Montes</button>
+          <button onclick="selectUser('mario')" class="user-btn" id="btn-mario">Mario</button>
+          <button onclick="selectUser('fran')" class="user-btn" id="btn-fran">Fran</button>
+        </div>
+
+        <div id="download-area" class="hidden mt-8 p-6 bg-slate-800 rounded-xl border border-blue-500/30">
+          <p class="text-lg mb-4">ROM preparada para <span id="selected-user" class="text-blue-400 font-bold"></span>
           </p>
-        </div>
-      </section>
-
-      <section id="game-info" class="game-info-section">
-        <div class="glass-panel game-info-panel">
-          <div class="game-info-icon">🎮</div>
-          <h2>Información del Juego</h2>
-          <p>Consulta los cambios en evoluciones, movimientos y tiendas:</p>
-          
-          <div class="info-tabs">
-            <button class="tab-btn active" data-tab="evolutions">Evoluciones</button>
-            <button class="tab-btn" data-tab="shops">Tiendas</button>
-          </div>
-          
-          <div class="tab-content">
-            <div id="evolutions-tab" class="tab-pane active">
-              <div class="loading-spinner">Cargando información de evoluciones...</div>
-            </div>
-            <div id="shops-tab" class="tab-pane">
-              <div class="loading-spinner">Cargando información de tiendas...</div>
-            </div>
-          </div>
-          
-          <div class="game-info-controls">
-            <select id="user-select" class="user-select-dropdown">
-              <option value="montes">Montes</option>
-              <option value="jorge">Jorge</option>
-              <option value="manu">Manu</option>
-              <option value="mario">Mario</option>
-              <option value="fran">Fran</option>
-            </select>
-            <button id="refresh-data" class="btn-secondary btn-small">
-              <span class="icon">🔄</span> Actualizar Datos
-            </button>
-          </div>
-        </div>
-      </section>
-
-      <section id="pokedex" class="pokedex-section">
-        <div class="glass-panel pokedex-panel">
-          <div class="pokedex-icon">📖</div>
-          <h2>Pokédex</h2>
-          <p>Para saber como evolucionan los bichos:</p>
-          <a href="https://luminescent.team/pokedex" target="_blank" class="btn-primary btn-pokedex">
-            Acceder a la Pokédex
+          <a href="#" id="download-link"
+            class="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-full text-lg font-bold transition transform hover:scale-105">
+            <span>⬇️</span> Descargar ROM
           </a>
+          <p class="mt-4 text-sm text-slate-500">Archivo: Pokemon_EloyLocke3_<span
+              class="user-file"></span>_RubiOmega.3ds</p>
         </div>
-      </section>
-    </main>
+      </div>
+    </div>
+  </section>
 
-    <footer>
-      <p>&copy; 2025 Eloy Locke. Todos los derechos reservados.</p>
-    </footer>
-  </div>
-  <script type="module" src="main.js"></script>
+  <footer class="border-t border-slate-800 py-8 text-center text-slate-500">
+    <p>&copy; 2025 Eloy Locke. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- JavaScript Inline Funcional -->
+  <script>
+    // ====================
+    // DATOS DEL JUEGO (Hardcoded de tu información)
+    // ====================
+
+    const shopsData = [
+      {
+        name: "Slateport Incenses",
+        items: ["revival-herb", "red-scarf", "kings-rock", "water-stone", "ganlon-berry", "sun-stone", "leaf-stone", "moon-stone", "deep-sea-scale"]
+      },
+      {
+        name: "Slateport Vitamins",
+        items: ["dawn-stone", "soda-pop", "max-potion", "chilan-berry", "dragon-scale", "metal-coat"]
+      },
+      {
+        name: "Rustboro Secondary",
+        items: ["max-elixir", "kelpsy-berry", "great-ball"]
+      },
+      {
+        name: "Slateport Secondary",
+        items: ["power-lens", "protector", "earth-plate", "shiny-stone", "pretty-wing", "prism-scale", "dubious-disc", "electirizer"]
+      },
+      {
+        name: "Verdanturf Secondary",
+        items: ["magmarizer", "sachet", "shalour-sable"]
+      },
+      {
+        name: "Fallarbor Secondary",
+        items: ["deep-sea-tooth", "oval-stone", "nomel-berry"]
+      },
+      {
+        name: "Lavaridge Herbs",
+        items: ["honey", "fire-stone", "claw-fossil", "razor-fang"]
+      },
+      {
+        name: "Lilycove Dept. Store 2F",
+        items: ["steel-gem", "razz-berry", "pink-scarf"]
+      },
+      {
+        name: "Lilycove Dept. Store 3F Left",
+        items: ["spelon-berry", "nugget", "reaper-cloth", "dusk-stone", "heat-rock", "premier-ball"]
+      },
+      {
+        name: "Lilycove Dept. Store 3F Right",
+        items: ["like-mail", "razor-claw", "smoke-ball", "thunder-stone", "green-scarf", "whipped-dream", "up-grade", "water-gem"]
+      }
+    ];
+
+    const movesData = [
+      { name: "Tackle", es: "Placaje", power: 40, pp: null, acc: null, change: "Potencia aumentada a 40", type: "normal" },
+      { name: "Thunder Wave", es: "Onda Trueno", power: null, pp: null, acc: 90, change: "Precisión: 90%", type: "electric" },
+      { name: "Recover", es: "Recuperación", power: null, pp: 5, acc: null, change: "PP reducidos a 5", type: "normal" },
+      { name: "Soft-Boiled", es: "Amnesia", power: null, pp: 5, acc: null, change: "PP reducidos a 5", type: "normal" },
+      { name: "Leech Life", es: "Chupavidas", power: 80, pp: 10, acc: null, change: "80 potencia, 10 PP", type: "bug" },
+      { name: "Rest", es: "Descanso", power: null, pp: 5, acc: null, change: "PP reducidos a 5", type: "psychic" },
+      { name: "Swagger", es: "Contoneo", power: null, pp: null, acc: 85, change: "Precisión: 85%", type: "normal" },
+      { name: "Milk Drink", es: "Batido", power: null, pp: 5, acc: null, change: "PP reducidos a 5", type: "normal" },
+      { name: "Rapid Spin", es: "Giro Rápido", power: 50, pp: null, acc: null, change: "Potencia aumentada a 50", type: "normal" },
+      { name: "Luster Purge", es: "Brillo Mágico", power: 95, pp: null, acc: null, change: "Potencia aumentada a 95", type: "psychic" },
+      { name: "Mist Ball", es: "Bola Neblina", power: 95, pp: null, acc: null, change: "Potencia aumentada a 95", type: "psychic" },
+      { name: "Slack Off", es: "Pereza", power: null, pp: 5, acc: null, change: "PP reducidos a 5", type: "normal" },
+      { name: "Roost", es: "Respiro", power: null, pp: 5, acc: null, change: "PP reducidos a 5", type: "flying" },
+      { name: "Sucker Punch", es: "Golpe Bajo", power: 70, pp: null, acc: null, change: "Potencia aumentada a 70", type: "dark" },
+      { name: "Dark Void", es: "Brecha Negra", power: null, pp: null, acc: 50, change: "Precisión: 50%", type: "dark" },
+      { name: "Flying Press", es: "Press ad Dinámico", power: 100, pp: null, acc: null, change: "Potencia aumentada a 100", type: "fighting" },
+      { name: "Fell Stinger", es: "Aguante Certero", power: 50, pp: null, acc: null, change: "Potencia aumentada a 50", type: "bug" },
+      { name: "Parabolic Charge", es: "Carga Parabólica", power: 65, pp: null, acc: null, change: "Potencia aumentada a 65", type: "electric" },
+      { name: "Water Shuriken", es: "Shuriken de Agua", power: null, pp: null, acc: null, change: "Ahora es movimiento Especial", type: "water" },
+      { name: "Mystical Fire", es: "Fuego Místico", power: 75, pp: null, acc: null, change: "Potencia aumentada a 75", type: "fire" }
+    ];
+
+    const tradelessEvolutions = [
+      { from: "poliwhirl", to: "politoed", method: "Nivel + King's Rock" },
+      { from: "kadabra", to: "alakazam", method: "Nivel 37" },
+      { from: "machoke", to: "machamp", method: "Nivel 37" },
+      { from: "graveler", to: "golem", method: "Nivel 37" },
+      { from: "slowpoke", to: "slowking", method: "Piedra Agua" },
+      { from: "haunter", to: "gengar", method: "Nivel 37" },
+      { from: "onix", to: "steelix", method: "Nivel + Metal Coat" },
+      { from: "lickitung", to: "lickilicky", method: "Nivel 33" },
+      { from: "rhydon", to: "rhyperior", method: "Nivel + Protector" },
+      { from: "tangela", to: "tangrowth", method: "Nivel 38" },
+      { from: "seadra", to: "kingdra", method: "Nivel + Dragon Scale" },
+      { from: "scyther", to: "scizor", method: "Nivel + Metal Coat" },
+      { from: "electabuzz", to: "electivire", method: "Nivel + Electirizer" },
+      { from: "magmar", to: "magmortar", method: "Nivel + Magmarizer" },
+      { from: "porygon", to: "porygon2", method: "Nivel + Up-Grade" },
+      { from: "aipom", to: "ambipom", method: "Nivel 32" },
+      { from: "yanma", to: "yanmega", method: "Nivel 33" },
+      { from: "piloswine", to: "mamoswine", method: "Nivel 45" },
+      { from: "porygon2", to: "porygon-z", method: "Nivel + Dubious Disc" },
+      { from: "feebas", to: "milotic", method: "Nivel + Prism Scale" },
+      { from: "dusclops", to: "dusknoir", method: "Nivel + Reaper Cloth" },
+      { from: "clamperl", to: "huntail", method: "Nivel + Deep Sea Tooth" },
+      { from: "clamperl", to: "gorebyss", method: "Nivel + Deep Sea Scale" },
+      { from: "bonsly", to: "sudowoodo", method: "Nivel 15" },
+      { from: "mime-jr", to: "mr-mime", method: "Nivel 15" },
+      { from: "boldore", to: "gigalith", method: "Nivel 37" },
+      { from: "gurdurr", to: "conkeldurr", method: "Nivel 37" },
+      { from: "karrablast", to: "escavalier", method: "Nivel 35" },
+      { from: "shelmet", to: "accelgor", method: "Nivel 35" },
+      { from: "spritzee", to: "aromatisse", method: "Nivel + Sachet" },
+      { from: "swirlix", to: "slurpuff", method: "Nivel + Whipped Dream" },
+      { from: "phantump", to: "trevenant", method: "Nivel 37" },
+      { from: "pumpkaboo", to: "gourgeist", method: "Nivel 37" }
+    ];
+
+    const easierEvolutions = [
+      { pokemon: "rhyhorn", evolvesTo: "rhydon", level: 30 },
+      { pokemon: "horsea", evolvesTo: "seadra", level: 30 },
+      { pokemon: "dragonair", evolvesTo: "dragonite", level: 40 },
+      { pokemon: "swinub", evolvesTo: "piloswine", level: 30 },
+      { pokemon: "pupitar", evolvesTo: "tyranitar", level: 40 },
+      { pokemon: "aron", evolvesTo: "lairon", level: 30 },
+      { pokemon: "lairon", evolvesTo: "aggron", level: 40 },
+      { pokemon: "trapinch", evolvesTo: "vibrava", level: 30 },
+      { pokemon: "vibrava", evolvesTo: "flygon", level: 40 },
+      { pokemon: "duskull", evolvesTo: "dusclops", level: 30 },
+      { pokemon: "snorunt", evolvesTo: "glalie", level: 40 },
+      { pokemon: "spheal", evolvesTo: "sealeo", level: 30 },
+      { pokemon: "sealeo", evolvesTo: "walrein", level: 40 },
+      { pokemon: "shelgon", evolvesTo: "salamence", level: 40 },
+      { pokemon: "metang", evolvesTo: "metagross", level: 40 },
+      { pokemon: "gabite", evolvesTo: "garchomp", level: 40 },
+      { pokemon: "mantyke", evolvesTo: "mantine", level: 35 },
+      { pokemon: "gothita", evolvesTo: "gothorita", level: 30 },
+      { pokemon: "gothorita", evolvesTo: "gothitelle", level: 40 },
+      { pokemon: "solosis", evolvesTo: "duosion", level: 30 },
+      { pokemon: "duosion", evolvesTo: "reuniclus", level: 40 },
+      { pokemon: "vanillite", evolvesTo: "vanillish", level: 30 },
+      { pokemon: "vanillish", evolvesTo: "vanilluxe", level: 40 },
+      { pokemon: "klink", evolvesTo: "klang", level: 30 },
+      { pokemon: "klang", evolvesTo: "klinklang", level: 40 },
+      { pokemon: "tynamo", evolvesTo: "eelektrik", level: 30 },
+      { pokemon: "elgyem", evolvesTo: "beheeyem", level: 40 },
+      { pokemon: "litwick", evolvesTo: "lampent", level: 30 },
+      { pokemon: "axew", evolvesTo: "fraxure", level: 30 },
+      { pokemon: "fraxure", evolvesTo: "haxorus", level: 40 },
+      { pokemon: "mienfoo", evolvesTo: "mienshao", level: 40 },
+      { pokemon: "golett", evolvesTo: "golurk", level: 40 },
+      { pokemon: "pawniard", evolvesTo: "bisharp", level: 40 },
+      { pokemon: "rufflet", evolvesTo: "braviary", level: 40 },
+      { pokemon: "vullaby", evolvesTo: "mandibuzz", level: 40 },
+      { pokemon: "deino", evolvesTo: "zweilous", level: 30 },
+      { pokemon: "zweilous", evolvesTo: "hydreigon", level: 40 },
+      { pokemon: "larvesta", evolvesTo: "volcarona", level: 40 },
+      { pokemon: "honedge", evolvesTo: "doublade", level: 30 },
+      { pokemon: "inkay", evolvesTo: "malamar", level: 30 },
+      { pokemon: "skrelp", evolvesTo: "dragalge", level: 40 },
+      { pokemon: "goomy", evolvesTo: "sliggoo", level: 30 },
+      { pokemon: "sliggoo", evolvesTo: "goodra", level: 40 },
+      { pokemon: "noibat", evolvesTo: "noivern", level: 40 }
+    ];
+
+    const typeColors = {
+      normal: 'bg-gray-400', fire: 'bg-red-500', water: 'bg-blue-500',
+      electric: 'bg-yellow-400', grass: 'bg-green-500', ice: 'bg-cyan-300',
+      fighting: 'bg-red-700', poison: 'bg-purple-500', ground: 'bg-yellow-600',
+      flying: 'bg-indigo-400', psychic: 'bg-pink-500', bug: 'bg-lime-500',
+      rock: 'bg-yellow-700', ghost: 'bg-purple-700', dragon: 'bg-indigo-600',
+      dark: 'bg-gray-700', steel: 'bg-gray-400', fairy: 'bg-pink-400'
+    };
+
+    // ====================
+    // RENDERIZADO
+    // ====================
+
+    function renderShops() {
+      const container = document.getElementById('shops-grid');
+      container.innerHTML = '';
+
+      shopsData.forEach(shop => {
+        const shopEl = document.createElement('div');
+        shopEl.className = 'shop-card rounded-xl p-4';
+
+        const itemsHtml = shop.items.map(item => `
+          <div class="flex items-center gap-2 p-2 rounded bg-slate-800/50">
+            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/${item}.png" 
+                 alt="${item}" 
+                 class="w-8 h-8 object-contain"
+                 onerror="this.style.display='none'">
+            <span class="text-sm capitalize text-slate-300">${item.replace(/-/g, ' ')}</span>
+          </div>
+        `).join('');
+
+        shopEl.innerHTML = `
+          <h4 class="font-bold text-lg mb-3 text-blue-400">${shop.name}</h4>
+          <div class="grid grid-cols-1 gap-1 max-h-48 overflow-y-auto pr-2 text-sm">
+            ${itemsHtml}
+          </div>
+          <div class="mt-3 pt-2 border-t border-slate-700 text-xs text-slate-500">
+            ${shop.items.length} objetos
+          </div>
+        `;
+        container.appendChild(shopEl);
+      });
+    }
+
+    function renderMoves() {
+      const container = document.getElementById('moves-list');
+      container.innerHTML = movesData.map(move => `
+        <div class="move-card rounded-lg p-4 flex items-center justify-between hover:bg-slate-800/50 transition">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 ${typeColors[move.type] || 'bg-gray-400'} rounded-lg flex items-center justify-center text-white text-xs font-bold uppercase">
+              ${move.type.substring(0, 3)}
+            </div>
+            <div>
+              <h4 class="font-bold text-white">${move.es}</h4>
+              <p class="text-xs text-slate-400">${move.change}</p>
+            </div>
+          </div>
+          <div class="text-right text-sm">
+            ${move.power ? `<div class="text-white font-bold">${move.power} <span class="text-slate-500 text-xs">PWR</span></div>` : ''}
+            ${move.pp ? `<div class="text-slate-400">${move.pp} PP</div>` : ''}
+            ${move.acc ? `<div class="text-blue-400">${move.acc}% ACC</div>` : ''}
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function renderTradelessEvolutions() {
+      const container = document.getElementById('evolutions-content');
+      container.innerHTML = `
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          ${tradelessEvolutions.map(evo => `
+            <div class="glass-panel rounded-lg p-3 flex items-center justify-between text-sm hover:border-blue-500/30 transition">
+              <div class="flex items-center gap-2">
+                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${getPokemonId(evo.from)}.png" 
+                     class="w-12 h-12 pokemon-sprite"
+                     onerror="this.src='https://via.placeholder.com/48'">
+                <span class="capitalize text-slate-300">${evo.from.replace(/-/g, ' ')}</span>
+              </div>
+              <div class="flex flex-col items-center px-2">
+                <span class="text-blue-400">→</span>
+                <span class="text-[10px] text-slate-500 text-center">${evo.method}</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="capitalize text-slate-300">${evo.to.replace(/-/g, ' ')}</span>
+                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${getPokemonId(evo.to)}.png" 
+                     class="w-12 h-12 pokemon-sprite"
+                     onerror="this.src='https://via.placeholder.com/48'">
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      `;
+    }
+
+    function renderEasierEvolutions() {
+      const container = document.getElementById('evolutions-content');
+      container.innerHTML = `
+        <div class="mb-4 p-3 bg-blue-900/30 border border-blue-500/30 rounded-lg text-sm text-blue-200">
+          💡 Las evoluciones por amistad ahora requieren <strong>160 puntos</strong> (anteriormente 220)
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3">
+          ${easierEvolutions.map(evo => `
+            <div class="glass-panel rounded-lg p-3 text-center hover:bg-slate-800/50 transition">
+              <div class="relative inline-block">
+                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${getPokemonId(evo.pokemon)}.png" 
+                     class="w-16 h-16 mx-auto pokemon-sprite"
+                     onerror="this.src='https://via.placeholder.com/64'">
+                <div class="absolute -bottom-1 -right-1 bg-blue-600 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center border-2 border-slate-900">
+                  ${evo.level}
+                </div>
+              </div>
+              <div class="mt-2">
+                <div class="font-bold text-sm capitalize">${evo.pokemon}</div>
+                <div class="text-xs text-slate-500">→ ${evo.evolvesTo}</div>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      `;
+    }
+
+    // Helper para IDs de Pokémon (simplificado)
+    function getPokemonId(name) {
+      const ids = {
+        'poliwhirl': 61, 'politoed': 186, 'kadabra': 64, 'alakazam': 65,
+        'machoke': 67, 'machamp': 68, 'graveler': 75, 'golem': 76,
+        'slowpoke': 79, 'slowking': 199, 'haunter': 93, 'gengar': 94,
+        'onix': 95, 'steelix': 208, 'lickitung': 108, 'lickilicky': 463,
+        'rhydon': 112, 'rhyperior': 464, 'tangela': 114, 'tangrowth': 465,
+        'seadra': 117, 'kingdra': 230, 'scyther': 123, 'scizor': 212,
+        'electabuzz': 125, 'electivire': 466, 'magmar': 126, 'magmortar': 467,
+        'porygon': 137, 'porygon2': 233, 'aipom': 190, 'ambipom': 424,
+        'yanma': 193, 'yanmega': 469, 'piloswine': 221, 'mamoswine': 473,
+        'porygon-z': 474, 'feebas': 349, 'milotic': 350, 'dusclops': 356,
+        'dusknoir': 477, 'clamperl': 366, 'huntail': 367, 'gorebyss': 368,
+        'bonsly': 438, 'sudowoodo': 185, 'mime-jr': 439, 'mr-mime': 122,
+        'boldore': 525, 'gigalith': 526, 'gurdurr': 533, 'conkeldurr': 534,
+        'karrablast': 588, 'escavalier': 589, 'shelmet': 616, 'accelgor': 617,
+        'spritzee': 682, 'aromatisse': 683, 'swirlix': 684, 'slurpuff': 685,
+        'phantump': 708, 'trevenant': 709, 'pumpkaboo': 710, 'gourgeist': 711,
+        'rhyhorn': 111, 'rhydon': 112, 'horsea': 116, 'dragonair': 148,
+        'dragonite': 149, 'swinub': 220, 'pupitar': 247, 'tyranitar': 248,
+        'aron': 304, 'lairon': 305, 'aggron': 306, 'trapinch': 328,
+        'vibrava': 329, 'flygon': 330, 'duskull': 355, 'snorunt': 361,
+        'glalie': 362, 'spheal': 363, 'sealeo': 364, 'walrein': 365,
+        'shelgon': 372, 'salamence': 373, 'metang': 375, 'metagross': 376,
+        'gabite': 444, 'garchomp': 445, 'mantyke': 458, 'mantine': 226,
+        'gothita': 574, 'gothorita': 575, 'gothitelle': 576, 'solosis': 577,
+        'duosion': 578, 'reuniclus': 579, 'vanillite': 582, 'vanillish': 583,
+        'vanilluxe': 584, 'klink': 599, 'klang': 600, 'klinklang': 601,
+        'tynamo': 602, 'eelektrik': 603, 'elgyem': 605, 'beheeyem': 606,
+        'litwick': 607, 'lampent': 608, 'axew': 610, 'fraxure': 611,
+        'haxorus': 612, 'mienfoo': 619, 'mienshao': 620, 'golett': 622,
+        'golurk': 623, 'pawniard': 624, 'bisharp': 625, 'rufflet': 627,
+        'braviary': 628, 'vullaby': 629, 'mandibuzz': 630, 'deino': 633,
+        'zweilous': 634, 'hydreigon': 635, 'larvesta': 636, 'volcarona': 637,
+        'honedge': 679, 'doublade': 680, 'inkay': 686, 'malamar': 687,
+        'skrelp': 690, 'dragalge': 691, 'goomy': 704, 'sliggoo': 705,
+        'goodra': 706, 'noibat': 714, 'noivern': 715
+      };
+      return ids[name] || 0;
+    }
+
+    function switchTab(tab) {
+      // Update buttons
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.id === `tab-${tab}`) btn.classList.add('active');
+      });
+
+      // Update content
+      document.querySelectorAll('.tab-pane').forEach(pane => {
+        pane.classList.remove('active');
+      });
+      document.getElementById(`content-${tab}`).classList.add('active');
+
+      // Render content if needed
+      if (tab === 'shops' && document.getElementById('shops-grid').innerHTML === '') {
+        renderShops();
+      } else if (tab === 'moves' && document.getElementById('moves-list').innerHTML === '') {
+        renderMoves();
+      } else if (tab === 'evolutions') {
+        renderTradelessEvolutions();
+      }
+    }
+
+    function selectUser(user) {
+      // Reset buttons
+      document.querySelectorAll('.user-btn').forEach(btn => {
+        btn.style.opacity = '0.5';
+      });
+      document.getElementById(`btn-${user}`).style.opacity = '1';
+
+      // Show download area
+      const downloadArea = document.getElementById('download-area');
+      downloadArea.classList.remove('hidden');
+
+      document.getElementById('selected-user').textContent = user.charAt(0).toUpperCase() + user.slice(1);
+      document.querySelectorAll('.user-file').forEach(el => el.textContent = user);
+
+      // Set download link (placeholder)
+      const linkMap = {
+        'jorge': '[ENLACE_ROM_JORGE]',
+        'manu': '[ENLACE_ROM_MANU]',
+        'montes': '[ENLACE_ROM_MONTES]',
+        'mario': '[ENLACE_ROM_MARIO]',
+        'fran': '[ENLACE_ROM_FRAN]'
+      };
+      document.getElementById('download-link').href = linkMap[user] || '#';
+    }
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', () => {
+      renderShops();
+    });
+  </script>
 </body>
 
 </html>
