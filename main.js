@@ -39,10 +39,11 @@ document.querySelectorAll('.step-card, .glass-panel, .hero-content, .hero-image,
 // User Selection Logic
 const userLinks = {
     jorge: "[ENLACE_ROM_JORGE]",
-    manu: "[ENLACE_ROM_MANU]", 
+    manu: "[ENLACE_ROM_MANU]",
     montes: "[ENLACE_ROM_MONTES]",
     mario: "[ENLACE_ROM_MARIO]",
-    fran: "[ENLACE_ROM_FRAN]"
+    fran: "[ENLACE_ROM_FRAN]",
+    pablo: "[ENLACE_ROM_PABLO]"
 };
 
 // Log Parser for Pokemon Game Information

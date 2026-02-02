@@ -15,18 +15,18 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="bg-[#09090b] text-zinc-200">
+<body class="bg-[#0f0e17] text-[#fffffe]">
 
   <!-- Navbar Original -->
-  <nav class="fixed w-full z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
+  <nav class="fixed w-full z-50 bg-[#0f0e17]/95 backdrop-blur-md border-b border-[#2e2f3e]">
     <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-      <div class="text-2xl font-bold font-display text-white">Pokémon EloyLocke 3</div>
+      <div class="text-2xl font-bold font-display text-[#fffffe]">Pokémon EloyLocke 3</div>
       <div class="flex gap-6 items-center">
-        <a href="[ENLACE_EXCEL_TRACKER]" target="_blank" class="hover:text-blue-400 transition">Tracker</a>
-        <a href="#inicio" class="hover:text-blue-400 transition">Inicio</a>
-        <a href="#info-juego" class="hover:text-blue-400 transition">Info del Juego</a>
-        <a href="#usuarios" class="hover:text-blue-400 transition">Progreso</a>
-        <a href="#descarga" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-full transition">Descargar</a>
+        <a href="[ENLACE_EXCEL_TRACKER]" target="_blank" class="hover:text-[#ff8906] transition">Tracker</a>
+        <a href="#inicio" class="hover:text-[#ff8906] transition">Inicio</a>
+        <a href="#info-juego" class="hover:text-[#ff8906] transition">Info del Juego</a>
+        <a href="#usuarios" class="hover:text-[#ff8906] transition">Progreso</a>
+        <a href="#descarga" class="bg-[#ff8906] hover:bg-[#e67e00] px-4 py-2 rounded-full transition text-[#fffffe]">Descargar</a>
       </div>
     </div>
   </nav>
@@ -38,31 +38,31 @@
         <h1 class="text-5xl md:text-7xl font-bold mb-6">
           Pokémon EloyLocke 3 <span class="text-gradient">Rubí Omega</span>
         </h1>
-        <p class="text-xl text-slate-400 mb-8">
+        <p class="text-xl text-[#a7a9be] mb-8">
           Experiencia Nuzlocke modificada con evoluciones sin intercambio, tiendas mejoradas y balance de movimientos.
         </p>
         <div class="flex gap-4">
-          <a href="#info-juego" class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-full font-semibold transition">
+          <a href="#info-juego" class="bg-[#ff8906] hover:bg-[#e67e00] px-6 py-3 rounded-full font-semibold transition text-[#fffffe]">
             Ver Cambios del Juego
           </a>
-          <a href="#descarga" class="border border-slate-600 hover:border-blue-400 px-6 py-3 rounded-full transition">
+          <a href="#descarga" class="border border-[#2e2f3e] hover:border-[#ff8906] px-6 py-3 rounded-full transition text-[#fffffe]">
             Descargar ROM
           </a>
         </div>
       </div>
       <div class="relative">
-        <img src="folagor.jpg" alt="Pokemon Rubi Omega" class="rounded-2xl shadow-2xl border border-slate-700" />
-        <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-blue-500 rounded-full blur-3xl opacity-50"></div>
+        <img src="folagor.jpg" alt="Pokemon Rubi Omega" class="rounded-2xl shadow-2xl border border-[#2e2f3e]" />
+        <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-[#ff8906] rounded-full blur-3xl opacity-50"></div>
       </div>
     </div>
   </header>
 
   <!-- Info del Juego - Datos Insertados Directamente -->
-  <section id="info-juego" class="py-16 bg-slate-800/50">
+  <section id="info-juego" class="py-16 bg-[#0f0e17]">
     <div class="container mx-auto px-6">
       <div class="text-center mb-12">
-        <h2 class="text-4xl font-bold font-display mb-4">Información del Juego</h2>
-        <p class="text-slate-400">Cambios aplicados en esta versión modificada</p>
+        <h2 class="text-4xl font-bold font-display mb-4 text-[#fffffe]">Información del Juego</h2>
+        <p class="text-[#a7a9be]">Cambios aplicados en esta versión modificada</p>
       </div>
 
       <!-- Tabs -->
@@ -77,7 +77,7 @@
 
         <!-- Tiendas Tab -->
         <div id="content-shops" class="tab-pane active">
-          <h3 class="text-2xl font-bold mb-6 text-blue-400">Objetos Disponibles en Tiendas</h3>
+          <h3 class="text-2xl font-bold mb-6 text-[#ff8906]">Objetos Disponibles en Tiendas</h3>
           <div id="shops-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <!-- Renderizado por JS -->
           </div>
@@ -85,7 +85,7 @@
 
         <!-- Movimientos Tab -->
         <div id="content-moves" class="tab-pane">
-          <h3 class="text-2xl font-bold mb-6 text-purple-400">Actualizaciones de Movimientos</h3>
+          <h3 class="text-2xl font-bold mb-6 text-[#f25f4c]">Actualizaciones de Movimientos</h3>
           <div id="moves-list" class="grid gap-3">
             <!-- Renderizado por JS -->
           </div>
@@ -94,10 +94,10 @@
         <!-- Evoluciones Tab -->
         <div id="content-evolutions" class="tab-pane">
           <div class="mb-6 flex justify-between items-center">
-            <h3 class="text-2xl font-bold text-pink-400">Sistema de Evolución</h3>
+            <h3 class="text-2xl font-bold text-[#e53170]">Sistema de Evolución</h3>
             <div class="flex gap-2">
               <button onclick="renderTradelessEvolutions()"
-                class="text-sm px-4 py-2 bg-pink-600 rounded hover:bg-pink-700 transition">Sin Intercambio</button>
+                class="text-sm px-4 py-2 bg-[#e53170] rounded hover:bg-[#d42a65] transition text-[#fffffe]">Sin Intercambio</button>
               <button onclick="renderEasierEvolutions()"
                 class="text-sm px-4 py-2 bg-slate-700 rounded hover:bg-slate-600 transition">Niveles Reducidos</button>
             </div>
@@ -115,11 +115,11 @@
 
 
   <!-- Sección de Descargas -->
-  <section id="descarga" class="py-16 bg-slate-800/30">
+  <section id="descarga" class="py-16 bg-[#0f0e17]">
     <div class="container mx-auto px-6 max-w-4xl">
       <div class="glass-panel p-8 text-center">
-        <h2 class="text-3xl font-bold mb-4">Descargar tu ROM Personalizada</h2>
-        <p class="text-slate-400 mb-8">Selecciona tu nombre para descargar tu versión única del juego.</p>
+        <h2 class="text-3xl font-bold mb-4 text-[#fffffe]">Descargar tu ROM Personalizada</h2>
+        <p class="text-[#a7a9be] mb-8">Selecciona tu nombre para descargar tu versión única del juego.</p>
 
         <div class="flex flex-wrap justify-center gap-4 mb-8">
           <button onclick="selectUser('jorge')" class="user-btn" id="btn-jorge">Jorge</button>
@@ -127,23 +127,24 @@
           <button onclick="selectUser('montes')" class="user-btn" id="btn-montes">Montes</button>
           <button onclick="selectUser('mario')" class="user-btn" id="btn-mario">Mario</button>
           <button onclick="selectUser('fran')" class="user-btn" id="btn-fran">Fran</button>
+          <button onclick="selectUser('pablo')" class="user-btn" id="btn-pablo">Pablo</button>
         </div>
 
-        <div id="download-area" class="hidden mt-8 p-6 bg-slate-800 rounded-xl border border-blue-500/30">
-          <p class="text-lg mb-4">ROM preparada para <span id="selected-user" class="text-blue-400 font-bold"></span>
+        <div id="download-area" class="hidden mt-8 p-6 bg-[#0f0e17] rounded-xl border border-[#ff8906]/30">
+          <p class="text-lg mb-4 text-[#fffffe]">ROM preparada para <span id="selected-user" class="text-[#ff8906] font-bold"></span>
           </p>
           <a href="#" id="download-link"
-            class="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-full text-lg font-bold transition transform hover:scale-105">
+            class="inline-flex items-center gap-2 bg-[#ff8906] hover:bg-[#e67e00] text-[#fffffe] px-8 py-4 rounded-full text-lg font-bold transition transform hover:scale-105">
             <span>⬇️</span> Descargar ROM
           </a>
-          <p class="mt-4 text-sm text-slate-500">Archivo: Pokemon_EloyLocke3_<span
+          <p class="mt-4 text-sm text-[#a7a9be]">Archivo: Pokemon_EloyLocke3_<span
               class="user-file"></span>_RubiOmega.3ds</p>
         </div>
       </div>
     </div>
   </section>
 
-  <footer class="border-t border-slate-800 py-8 text-center text-slate-500">
+  <footer class="border-t border-[#2e2f3e] py-8 text-center text-[#a7a9be]">
     <p>&copy; 2025 Eloy Locke. Todos los derechos reservados.</p>
   </footer>
 
@@ -243,7 +244,8 @@
         { name: "Lilycove Dept. Store 2F Left", items: ["whipped-dream", "mystic-water", "pidgeotite"] },
         { name: "Lilycove Dept. Store 3F Left", items: ["thunder-stone", "kings-rock", "oval-stone", "dive-ball", "mawilite", "razor-fang"] },
         { name: "Lilycove Dept. Store 3F Right", items: ["water-stone", "razor-claw", "shiny-stone", "reaper-cloth", "prism-scale", "cleanse-tag", "heat-rock", "aguav-berry"] }
-      ]
+      ],
+      pablo: []
     };
 
     const movesData = [
@@ -376,10 +378,10 @@
         controlsDiv.id = 'shop-controls';
         controlsDiv.className = 'col-span-1 md:col-span-2 lg:col-span-3 flex flex-wrap justify-center gap-2 mb-6';
 
-        ['montes', 'jorge', 'manu', 'mario', 'fran'].forEach(u => {
+        ['montes', 'jorge', 'manu', 'mario', 'fran', 'pablo'].forEach(u => {
           const btn = document.createElement('button');
           btn.textContent = u.charAt(0).toUpperCase() + u.slice(1);
-          btn.className = `px-3 py-1 rounded text-sm transition ${u === user ? 'bg-blue-600 text-white' : 'bg-slate-700 text-slate-300 hover:bg-slate-600'}`;
+          btn.className = `px-3 py-1 rounded text-sm transition ${u === user ? 'bg-[#ff8906] text-[#fffffe]' : 'bg-[#2e2f3e] text-[#a7a9be] hover:bg-[#3f3f46]'}`;
           btn.onclick = () => renderShops(u);
           controlsDiv.appendChild(btn);
         });
@@ -389,7 +391,7 @@
         // Update active state
         Array.from(controls.children).forEach(btn => {
           const btnUser = btn.textContent.toLowerCase();
-          btn.className = `px-3 py-1 rounded text-sm transition ${btnUser === user ? 'bg-blue-600 text-white' : 'bg-slate-700 text-slate-300 hover:bg-slate-600'}`;
+          btn.className = `px-3 py-1 rounded text-sm transition ${btnUser === user ? 'bg-[#ff8906] text-[#fffffe]' : 'bg-[#2e2f3e] text-[#a7a9be] hover:bg-[#3f3f46]'}`;
         });
       }
 
@@ -397,7 +399,7 @@
 
       if (!userShops || userShops.length === 0) {
         container.innerHTML = `
-          <div class="col-span-1 md:col-span-2 lg:col-span-3 text-center py-12 text-slate-500">
+          <div class="col-span-1 md:col-span-2 lg:col-span-3 text-center py-12 text-[#a7a9be]">
             <p>No hay datos de tienda para ${user.charAt(0).toUpperCase() + user.slice(1)}</p>
           </div>
         `;
@@ -409,21 +411,21 @@
         shopEl.className = 'shop-card rounded-xl p-4';
 
         const itemsHtml = shop.items.map(item => `
-          <div class="flex items-center gap-2 p-2 rounded bg-slate-800/50">
-            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/${item}.png" 
-                 alt="${item}" 
+          <div class="flex items-center gap-2 p-2 rounded bg-[#0f0e17]/50">
+            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/${item}.png"
+                 alt="${item}"
                  class="w-8 h-8 object-contain"
                  onerror="this.style.display='none'">
-            <span class="text-sm capitalize text-slate-300">${item.replace(/-/g, ' ')}</span>
+            <span class="text-sm capitalize text-[#a7a9be]">${item.replace(/-/g, ' ')}</span>
           </div>
         `).join('');
 
         shopEl.innerHTML = `
-          <h4 class="font-bold text-lg mb-3 text-blue-400">${shop.name}</h4>
+          <h4 class="font-bold text-lg mb-3 text-[#ff8906]">${shop.name}</h4>
           <div class="grid grid-cols-1 gap-1 max-h-48 overflow-y-auto pr-2 text-sm">
             ${itemsHtml}
           </div>
-          <div class="mt-3 pt-2 border-t border-slate-700 text-xs text-slate-500">
+          <div class="mt-3 pt-2 border-t border-[#2e2f3e] text-xs text-[#a7a9be]">
             ${shop.items.length} objetos
           </div>
         `;
@@ -434,20 +436,20 @@
     function renderMoves() {
       const container = document.getElementById('moves-list');
       container.innerHTML = movesData.map(move => `
-        <div class="move-card rounded-lg p-4 flex items-center justify-between hover:bg-slate-800/50 transition">
+        <div class="move-card rounded-lg p-4 flex items-center justify-between hover:bg-[#0f0e17]/50 transition">
           <div class="flex items-center gap-3">
-            <div class="w-10 h-10 ${typeColors[move.type] || 'bg-gray-400'} rounded-lg flex items-center justify-center text-white text-xs font-bold uppercase">
+            <div class="w-10 h-10 ${typeColors[move.type] || 'bg-gray-400'} rounded-lg flex items-center justify-center text-[#fffffe] text-xs font-bold uppercase">
               ${move.type.substring(0, 3)}
             </div>
             <div>
-              <h4 class="font-bold text-white">${move.es}</h4>
-              <p class="text-xs text-slate-400">${move.change}</p>
+              <h4 class="font-bold text-[#fffffe]">${move.es}</h4>
+              <p class="text-xs text-[#a7a9be]">${move.change}</p>
             </div>
           </div>
           <div class="text-right text-sm">
-            ${move.power ? `<div class="text-white font-bold">${move.power} <span class="text-slate-500 text-xs">PWR</span></div>` : ''}
-            ${move.pp ? `<div class="text-slate-400">${move.pp} PP</div>` : ''}
-            ${move.acc ? `<div class="text-blue-400">${move.acc}% ACC</div>` : ''}
+            ${move.power ? `<div class="text-[#fffffe] font-bold">${move.power} <span class="text-[#a7a9be] text-xs">PWR</span></div>` : ''}
+            ${move.pp ? `<div class="text-[#a7a9be]">${move.pp} PP</div>` : ''}
+            ${move.acc ? `<div class="text-[#ff8906]">${move.acc}% ACC</div>` : ''}
           </div>
         </div>
       `).join('');
@@ -458,20 +460,20 @@
       container.innerHTML = `
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           ${tradelessEvolutions.map(evo => `
-            <div class="glass-panel rounded-lg p-3 flex items-center justify-between text-sm hover:border-blue-500/30 transition">
+            <div class="glass-panel rounded-lg p-3 flex items-center justify-between text-sm hover:border-[#ff8906]/30 transition">
               <div class="flex items-center gap-2">
-                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${getPokemonId(evo.from)}.png" 
+                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${getPokemonId(evo.from)}.png"
                      class="w-12 h-12 pokemon-sprite"
                      onerror="this.src='https://via.placeholder.com/48'">
-                <span class="capitalize text-slate-300">${evo.from.replace(/-/g, ' ')}</span>
+                <span class="capitalize text-[#a7a9be]">${evo.from.replace(/-/g, ' ')}</span>
               </div>
               <div class="flex flex-col items-center px-2">
-                <span class="text-blue-400">→</span>
-                <span class="text-[10px] text-slate-500 text-center">${evo.method}</span>
+                <span class="text-[#ff8906]">→</span>
+                <span class="text-[10px] text-[#a7a9be] text-center">${evo.method}</span>
               </div>
               <div class="flex items-center gap-2">
-                <span class="capitalize text-slate-300">${evo.to.replace(/-/g, ' ')}</span>
-                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${getPokemonId(evo.to)}.png" 
+                <span class="capitalize text-[#a7a9be]">${evo.to.replace(/-/g, ' ')}</span>
+                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${getPokemonId(evo.to)}.png"
                      class="w-12 h-12 pokemon-sprite"
                      onerror="this.src='https://via.placeholder.com/48'">
               </div>
@@ -484,23 +486,23 @@
     function renderEasierEvolutions() {
       const container = document.getElementById('evolutions-content');
       container.innerHTML = `
-        <div class="mb-4 p-3 bg-blue-900/30 border border-blue-500/30 rounded-lg text-sm text-blue-200">
+        <div class="mb-4 p-3 bg-[#ff8906]/10 border border-[#ff8906]/30 rounded-lg text-sm text-[#a7a9be]">
           💡 Las evoluciones por amistad ahora requieren <strong>160 puntos</strong> (anteriormente 220)
         </div>
         <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3">
           ${easierEvolutions.map(evo => `
-            <div class="glass-panel rounded-lg p-3 text-center hover:bg-slate-800/50 transition">
+            <div class="glass-panel rounded-lg p-3 text-center hover:bg-[#0f0e17]/50 transition">
               <div class="relative inline-block">
-                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${getPokemonId(evo.pokemon)}.png" 
+                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${getPokemonId(evo.pokemon)}.png"
                      class="w-16 h-16 mx-auto pokemon-sprite"
                      onerror="this.src='https://via.placeholder.com/64'">
-                <div class="absolute -bottom-1 -right-1 bg-blue-600 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center border-2 border-slate-900">
+                <div class="absolute -bottom-1 -right-1 bg-[#ff8906] text-[#fffffe] text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center border-2 border-[#0f0e17]">
                   ${evo.level}
                 </div>
               </div>
               <div class="mt-2">
-                <div class="font-bold text-sm capitalize">${evo.pokemon}</div>
-                <div class="text-xs text-slate-500">→ ${evo.evolvesTo}</div>
+                <div class="font-bold text-sm capitalize text-[#fffffe]">${evo.pokemon}</div>
+                <div class="text-xs text-[#a7a9be]">→ ${evo.evolvesTo}</div>
               </div>
             </div>
           `).join('')}
@@ -593,7 +595,8 @@
         'manu': '[ENLACE_ROM_MANU]',
         'montes': '[ENLACE_ROM_MONTES]',
         'mario': '[ENLACE_ROM_MARIO]',
-        'fran': '[ENLACE_ROM_FRAN]'
+        'fran': '[ENLACE_ROM_FRAN]',
+        'pablo': '[ENLACE_ROM_PABLO]'
       };
       document.getElementById('download-link').href = linkMap[user] || '#';
     }
