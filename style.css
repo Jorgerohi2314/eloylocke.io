@@ -234,16 +234,18 @@ nav a:hover {
     -webkit-text-fill-color: transparent;
 }
 
-.text-muted {
-    color: var(--text-muted);
+.text-muted,
+body .text-muted {
+    color: var(--text-muted) !important;
 }
 
 .hidden {
     display: none;
 }
 
-.text-main {
-    color: var(--text-main);
+.text-main,
+body .text-main {
+    color: var(--text-main) !important;
 }
 
 .text-primary {
@@ -258,8 +260,9 @@ nav a:hover {
     color: var(--tertiary-color);
 }
 
-.bg-light {
-    background-color: var(--bg-light);
+.bg-light,
+body .bg-light {
+    background-color: var(--bg-light) !important;
 }
 
 .bg-primary {
