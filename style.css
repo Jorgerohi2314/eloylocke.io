@@ -4,6 +4,8 @@
     --purple: #301e4e;
     --light-coral: #ff6e6c;
     --bg-light: #0f0e17;
+    --headline-color: #fffffe;
+    --paragraph-color: #a7a9be;
 
     /* Mapeo a tus variables originales para compatibilidad */
     --bg-color: #0f0e17;
@@ -12,8 +14,8 @@
     --border-color: var(--midnight-blue);
     --border-hover: var(--purple);
 
-    --text-main: var(--midnight-blue);
-    --text-muted: #1b1425;
+    --text-main: var(--headline-color);
+    --text-muted: var(--paragraph-color);
     --text-secondary: var(--purple);
 
     --primary-color: var(--light-coral);
