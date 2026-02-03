@@ -43,7 +43,7 @@ html {
 
 body {
     font-family: var(--font-main);
-    color: #1b1425;
+    color: var(--headline-color);
     background-color: var(--bg-color);
     font-size: 18px;
     font-weight: 400;
@@ -59,7 +59,7 @@ h3,
 h4,
 h5,
 h6 {
-    color: var(--midnight-blue);
+    color: var(--headline-color);
     font-weight: 700;
     margin-top: 0;
     margin-bottom: 1rem;
@@ -90,7 +90,7 @@ h4 {
 }
 
 p {
-    color: #1b1425;
+    color: var(--paragraph-color);
     font-size: 1.3rem;
     margin-bottom: 10px;
 }
@@ -110,14 +110,14 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(15, 14, 23, 0.95);
     backdrop-filter: blur(8px);
     z-index: 1000;
     border-bottom: 3px solid var(--purple);
 }
 
 nav a {
-    color: var(--midnight-blue);
+    color: var(--headline-color);
     text-decoration: none;
     margin-left: 1rem;
     font-size: 1.2rem;
@@ -163,7 +163,7 @@ nav a:hover {
 .user-btn {
     cursor: pointer;
     background-color: var(--primary-color);
-    color: var(--midnight-blue);
+    color: #1f1235;
     border: none;
     border-radius: 3px;
     padding: 1.2rem 2rem;
@@ -184,7 +184,7 @@ nav a:hover {
 
 .tab-btn {
     background: var(--surface-color);
-    color: var(--midnight-blue);
+    color: var(--headline-color);
     border: 3px solid var(--midnight-blue);
     padding: 9px 30px;
     border-radius: 3px;
@@ -196,14 +196,14 @@ nav a:hover {
 
 .tab-btn:hover:not(.active) {
     background: var(--surface-hover);
-    color: var(--midnight-blue);
+    color: var(--headline-color);
 }
 
 /* Secondary button style */
 .btn-secondary {
     cursor: pointer;
     background-color: var(--secondary-color);
-    color: #fff;
+    color: var(--headline-color);
     border: none;
     border-radius: 3px;
     padding: 1.2rem 2rem;
@@ -357,7 +357,7 @@ nav a:hover {
 footer {
     border-top: 3px solid var(--midnight-blue);
     background: var(--bg-color);
-    color: #1b1425;
+    color: var(--paragraph-color);
     padding-top: 3rem;
     padding-bottom: 3rem;
 }
