@@ -3,12 +3,12 @@
     --midnight-blue: #1f1235;
     --purple: #301e4e;
     --light-coral: #ff6e6c;
-    --bg-light: #f4effc;
+    --bg-light: #0f0e17;
 
     /* Mapeo a tus variables originales para compatibilidad */
-    --bg-color: #fff;
-    --surface-color: #fff;
-    --surface-hover: #f4effc;
+    --bg-color: #0f0e17;
+    --surface-color: #1f1235;
+    --surface-hover: #301e4e;
     --border-color: var(--midnight-blue);
     --border-hover: var(--purple);
 
@@ -238,6 +238,38 @@ nav a:hover {
 
 .hidden {
     display: none;
+}
+
+.text-main {
+    color: var(--text-main);
+}
+
+.text-primary {
+    color: var(--primary-color);
+}
+
+.text-secondary {
+    color: var(--secondary-color);
+}
+
+.text-tertiary {
+    color: var(--tertiary-color);
+}
+
+.bg-light {
+    background-color: var(--bg-light);
+}
+
+.bg-primary {
+    background-color: var(--primary-color);
+}
+
+.border-primary {
+    border: 3px solid var(--primary-color);
+}
+
+.border-muted {
+    border-color: var(--border-color);
 }
 
 /* Section Styles */
