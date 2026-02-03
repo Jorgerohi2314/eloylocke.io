@@ -26,7 +26,8 @@
         <a href="#inicio" class="hover:text-[#ff8906] transition">Inicio</a>
         <a href="#info-juego" class="hover:text-[#ff8906] transition">Info del Juego</a>
         <a href="#usuarios" class="hover:text-[#ff8906] transition">Progreso</a>
-        <a href="#descarga" class="bg-[#ff8906] hover:bg-[#e67e00] px-4 py-2 rounded-full transition text-[#fffffe]">Descargar</a>
+        <a href="#descarga"
+          class="bg-[#ff8906] hover:bg-[#e67e00] px-4 py-2 rounded-full transition text-[#fffffe]">Descargar</a>
       </div>
     </div>
   </nav>
@@ -42,16 +43,18 @@
           Experiencia Nuzlocke modificada con evoluciones sin intercambio, tiendas mejoradas y balance de movimientos.
         </p>
         <div class="flex gap-4">
-          <a href="#info-juego" class="bg-[#ff8906] hover:bg-[#e67e00] px-6 py-3 rounded-full font-semibold transition text-[#fffffe]">
+          <a href="#info-juego"
+            class="bg-[#ff8906] hover:bg-[#e67e00] px-6 py-3 rounded-full font-semibold transition text-[#fffffe]">
             Ver Cambios del Juego
           </a>
-          <a href="#descarga" class="border border-[#2e2f3e] hover:border-[#ff8906] px-6 py-3 rounded-full transition text-[#fffffe]">
+          <a href="#descarga"
+            class="border border-[#2e2f3e] hover:border-[#ff8906] px-6 py-3 rounded-full transition text-[#fffffe]">
             Descargar ROM
           </a>
         </div>
       </div>
       <div class="relative">
-        <img src="folagor.jpg" alt="Pokemon Rubi Omega" class="rounded-2xl shadow-2xl border border-[#2e2f3e]" />
+        <img src="EloyLocke.jpg" alt="Pokemon Rubi Omega" class="rounded-2xl shadow-2xl border border-[#2e2f3e]" />
         <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-[#ff8906] rounded-full blur-3xl opacity-50"></div>
       </div>
     </div>
@@ -97,7 +100,8 @@
             <h3 class="text-2xl font-bold text-[#e53170]">Sistema de Evolución</h3>
             <div class="flex gap-2">
               <button onclick="renderTradelessEvolutions()"
-                class="text-sm px-4 py-2 bg-[#e53170] rounded hover:bg-[#d42a65] transition text-[#fffffe]">Sin Intercambio</button>
+                class="text-sm px-4 py-2 bg-[#e53170] rounded hover:bg-[#d42a65] transition text-[#fffffe]">Sin
+                Intercambio</button>
               <button onclick="renderEasierEvolutions()"
                 class="text-sm px-4 py-2 bg-slate-700 rounded hover:bg-slate-600 transition">Niveles Reducidos</button>
             </div>
@@ -131,7 +135,8 @@
         </div>
 
         <div id="download-area" class="hidden mt-8 p-6 bg-[#0f0e17] rounded-xl border border-[#ff8906]/30">
-          <p class="text-lg mb-4 text-[#fffffe]">ROM preparada para <span id="selected-user" class="text-[#ff8906] font-bold"></span>
+          <p class="text-lg mb-4 text-[#fffffe]">ROM preparada para <span id="selected-user"
+              class="text-[#ff8906] font-bold"></span>
           </p>
           <a href="#" id="download-link"
             class="inline-flex items-center gap-2 bg-[#ff8906] hover:bg-[#e67e00] text-[#fffffe] px-8 py-4 rounded-full text-lg font-bold transition transform hover:scale-105">
@@ -245,7 +250,18 @@
         { name: "Lilycove Dept. Store 3F Left", items: ["thunder-stone", "kings-rock", "oval-stone", "dive-ball", "mawilite", "razor-fang"] },
         { name: "Lilycove Dept. Store 3F Right", items: ["water-stone", "razor-claw", "shiny-stone", "reaper-cloth", "prism-scale", "cleanse-tag", "heat-rock", "aguav-berry"] }
       ],
-      pablo: []
+      pablo: [
+        { name: "Slateport Incenses", items: ["sachet", "kings-rock", "focus-band", "spooky-plate", "deep-sea-scale", "oval-stone", "dive-ball", "dusk-stone", "moon-stone"] },
+        { name: "Slateport Vitamins", items: ["cleanse-tag", "tamato-berry", "sun-stone", "power-band", "occa-berry", "thunder-stone"] },
+        { name: "Rustboro Secondary", items: ["razor-fang", "muscle-band", "pamtre-berry"] },
+        { name: "Slateport Secondary", items: ["rocky-helmet", "sitrus-berry", "dragon-scale", "green-scarf", "burn-heal", "magmarizer", "gyaradosite", "pomeg-berry"] },
+        { name: "Verdanturf Secondary", items: ["red-flute", "metal-coat", "focus-sash"] },
+        { name: "Fallarbor Secondary", items: ["wepear-berry", "expert-belt", "razor-claw"] },
+        { name: "Lavaridge Herbs", items: ["leaf-stone", "up-grade", "fire-stone", "silver-powder"] },
+        { name: "Lilycove Dept. Store 2F Left", items: ["bridge-mail-d", "reply-mail", "qualot-berry"] },
+        { name: "Lilycove Dept. Store 3F Left", items: ["whipped-dream", "electirizer", "protector", "prism-scale", "charcoal", "dubious-disc"] },
+        { name: "Lilycove Dept. Store 3F Right", items: ["douse-drive", "shiny-stone", "water-stone", "dawn-stone", "deep-sea-tooth", "reaper-cloth", "blazikenite", "flame-plate"] }
+      ]
     };
 
     const movesData = [
@@ -591,12 +607,12 @@
 
       // Set download link (placeholder)
       const linkMap = {
-        'jorge': '[ENLACE_ROM_JORGE]',
-        'manu': '[ENLACE_ROM_MANU]',
-        'montes': '[ENLACE_ROM_MONTES]',
-        'mario': '[ENLACE_ROM_MARIO]',
-        'fran': '[ENLACE_ROM_FRAN]',
-        'pablo': '[ENLACE_ROM_PABLO]'
+        'jorge': 'https://drive.google.com/file/d/1C1RSeKFaANOfVA8r3tXLhq8S-RpX2mU0/view?usp=drive_link',
+        'manu': 'https://drive.google.com/file/d/1odGck80aSR6JhYOYppAOZBa7rIGwmODJ/view?usp=drive_link',
+        'montes': 'https://drive.google.com/file/d/1cFcOEGcmJVm81m-1Zp8750-zTr-nDhAg/view?usp=drive_link',
+        'mario': 'https://drive.google.com/file/d/14VBCOQrdfipWsGv_nSAkSwDn-2ENkIpx/view?usp=drive_link',
+        'fran': 'https://drive.google.com/file/d/1uyoeYr5ZCYB--PPs7gUXfnREOv22Mcam/view?usp=drive_link',
+        'pablo': 'https://drive.google.com/file/d/1yjN5NUVJPOzhX1SjJpE2sfGcErjoe0IY/view?usp=drive_link'
       };
       document.getElementById('download-link').href = linkMap[user] || '#';
     }
