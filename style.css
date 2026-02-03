@@ -16,7 +16,7 @@
 
     --text-main: var(--headline-color);
     --text-muted: var(--paragraph-color);
-    --text-secondary: var(--purple);
+    --text-secondary: var(--headline-color);
 
     --primary-color: var(--light-coral);
     --primary-hover: #e55d5b;
